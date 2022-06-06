@@ -1,27 +1,16 @@
-import Home from "./pages/Home";
-import Contacts from "./pages/Contacts";
-import Products from "./pages/Products";
-import { Route, Routes } from "react-router-dom";
-import Layout from "./components/Layout/Layout";
-import Product from "./pages/Product";
-import NotFound from "./pages/NotFound";
-import Categories from "./pages/Categories";
-import Category from "./pages/Category";
+import Example1 from "./components/Example1";
+import Example2 from "./components/Example2";
+import Example3 from "./components/Example3";
 
-function App() {
-  return (
+
+function App(props) {
+  return  (
     <div className="App">
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/products/:productId" element={<Product />} />
-          <Route path="/categories" element={<Categories />} />
-          <Route path="/categories/:categoryId" element={<Category />} />
-          <Route path="/contacts" element={<Contacts />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Layout>
+     <Example1/>
+     <Example2/>
+     <Example3/>
+     {props.children}
+     
     </div>
   );
 }
